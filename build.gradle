@@ -1,0 +1,17 @@
+plugins {
+    id 'base'
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+    }
+}
+
+subprojects {
+    tasks.withType(Test).configureEach {
+        testLogging {
+            events "passed", "failed", "skipped"
+        }
+    }
+}

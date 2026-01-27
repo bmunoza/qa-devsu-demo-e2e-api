@@ -1,0 +1,4 @@
+rootProject.name = 'qa-devsu-demo-e2e-api'
+
+include 'e2e-serenity'
+include 'api-karate'

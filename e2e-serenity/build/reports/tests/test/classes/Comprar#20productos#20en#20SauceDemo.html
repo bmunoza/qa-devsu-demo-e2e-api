@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class Comprar productos en SauceDemo</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class Comprar productos en SauceDemo</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/default-package.html">default-package</a> &gt; Comprar productos en SauceDemo</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">1</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">1</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">10.923s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox failures" id="successRate">
+<div class="percent">0%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Failed tests</a>
+</li>
+<li>
+<a href="#tab1">Tests</a>
+</li>
+<li>
+<a href="#tab2">Standard output</a>
+</li>
+<li>
+<a href="#tab3">Standard error</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Failed tests</h2>
+<div class="test">
+<a name="Validar compra exitosa en SauceDemo"></a>
+<h3 class="failures">Validar compra exitosa en SauceDemo</h3>
+<span class="code">
+<pre>java.lang.AssertionError: 
+Expected: a string containing &quot;THANK YOU FOR YOUR ORsDER&quot; ignoring case
+     but: was &quot;Thank you for your order!&quot;
+	at net.serenitybdd.screenplay.ErrorTally.throwSummaryExceptionFrom(ErrorTally.java:38)
+	at net.serenitybdd.screenplay.ErrorTally.reportAnyErrors(ErrorTally.java:32)
+	at net.serenitybdd.screenplay.Actor.should(Actor.java:397)
+	at com.saucedemo.e2e.stepDefinitions.PurchaseStepDefinitions.validateMessage(PurchaseStepDefinitions.java:52)
+	at ✽.finaliza la compra y valida el mensaje &quot;THANK YOU FOR YOUR ORsDER&quot;(classpath:features/purchase.feature:13)
+</pre>
+</span>
+</div>
+</div>
+<div id="tab1" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="failures">Validar compra exitosa en SauceDemo</td>
+<td class="failures">10.923s</td>
+<td class="failures">failed</td>
+</tr>
+</table>
+</div>
+<div id="tab2" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>
+@smoke
+Scenario: Validar compra exitosa en SauceDemo                                                     ?[90m# features/purchase.feature:7?[0m
+  ?[32mGiven ?[0m?[32mBrayan inicia sesión en SauceDemo con usuario ?[0m?[32m?[1m&quot;standard_user&quot;?[0m?[32m y contraseña ?[0m?[32m?[1m&quot;secret_sauce&quot;?[0m ?[90m# com.saucedemo.e2e.stepDefinitions.PurchaseStepDefinitions.login(java.lang.String,java.lang.String)?[0m
+  ?[32mWhen ?[0m?[32magrega productos al carrito?[0m                                                                ?[90m# com.saucedemo.e2e.stepDefinitions.PurchaseStepDefinitions.addTwoProducts(io.cucumber.datatable.DataTable)?[0m
+    | Sauce Labs Bike Light   |
+    | Sauce Labs Bolt T-Shirt |
+  ?[32mAnd ?[0m?[32mcompleta el formulario de compra con nombre ?[0m?[32m?[1m&quot;Brayan&quot;?[0m?[32m apellido ?[0m?[32m?[1m&quot;Munoz&quot;?[0m?[32m y zip ?[0m?[32m?[1m&quot;893828&quot;?[0m        ?[90m# com.saucedemo.e2e.stepDefinitions.PurchaseStepDefinitions.fillCheckout(java.lang.String,java.lang.String,java.lang.String)?[0m
+  ?[31mThen ?[0m?[31mfinaliza la compra y valida el mensaje ?[0m?[31m?[1m&quot;THANK YOU FOR YOUR ORsDER&quot;?[0m                         ?[90m# com.saucedemo.e2e.stepDefinitions.PurchaseStepDefinitions.validateMessage(java.lang.String)?[0m
+      ?[31mjava.lang.AssertionError: 
+Expected: a string containing &quot;THANK YOU FOR YOUR ORsDER&quot; ignoring case
+     but: was &quot;Thank you for your order!&quot;
+	at net.serenitybdd.screenplay.ErrorTally.throwSummaryExceptionFrom(ErrorTally.java:38)
+	at net.serenitybdd.screenplay.ErrorTally.reportAnyErrors(ErrorTally.java:32)
+	at net.serenitybdd.screenplay.Actor.should(Actor.java:397)
+	at com.saucedemo.e2e.stepDefinitions.PurchaseStepDefinitions.validateMessage(PurchaseStepDefinitions.java:52)
+	at ✽.finaliza la compra y valida el mensaje &quot;THANK YOU FOR YOUR ORsDER&quot;(classpath:features/purchase.feature:13)
+?[0m
+</pre>
+</span>
+</div>
+<div id="tab3" class="tab">
+<h2>Standard error</h2>
+<span class="code">
+<pre>ene. 27, 2026 1:20:15 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+ADVERTENCIA: Unable to find CDP implementation matching 143
+ene. 27, 2026 1:20:15 P. M. org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+ADVERTENCIA: Unable to find version of CDP to use for 143.0.7499.194. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.20.0` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 8.10</a> at 27/01/2026, 1:20:23 p. m.</p>
+</div>
+</div>
+</body>
+</html>
