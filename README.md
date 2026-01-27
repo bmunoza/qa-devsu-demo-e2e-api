@@ -40,33 +40,34 @@ La automatización cubre el siguiente flujo funcional:
 
 ## Estructura del proyecto
 e2e-serenity
-
 ├── questions
-│ ├── CartProductNames
-│ └── ConfirmationMessage
+│   ├── CartProductNames
+│   └── ConfirmationMessage
 │
 ├── runners
-│ └── PurchaseRunner
+│   └── PurchaseRunner
 │
 ├── stepDefinitions
-│ ├── Hooks
-│ └── PurchaseStepDefinitions
+│   ├── Hooks
+│   └── PurchaseStepDefinitions
 │
 ├── tasks
-│ ├── Login
-│ ├── AddProducts
-│ ├── VerifyCart
-│ └── Checkout
+│   ├── Login
+│   ├── AddProducts
+│   ├── VerifyCart
+│   └── Checkout
 │
 ├── userInterfaces
-│ ├── LoginPage
-│ ├── InventoryPage
-│ └── CheckoutPage
+│   ├── LoginPage
+│   ├── InventoryPage
+│   └── CheckoutPage
 │
 ├── resources
-│ ├── features
-│ │ └── purchase.feature
-│ └── serenity.conf
+│   ├── features
+│   │   └── purchase.feature
+│   └── serenity.conf
+
+
 --------------------------------------------------
 PASOS PARA EJECUTAR EL PROYECTO
 --------------------------------------------------
@@ -98,3 +99,4 @@ DETALLES IMPORTANTES
 - Las validaciones intermedias se realizan antes del checkout.
 - La validación final confirma el mensaje de compra exitosa.
 - Los localizadores están desacoplados en la capa UserInterfaces.
+
