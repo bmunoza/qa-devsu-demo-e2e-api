@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="1" name="Comprar productos en SauceDemo" skipped="0" tests="1" time="9.98" timestamp="2026-01-27 01:20:11"><testcase name="Validar compra exitosa en SauceDemo"><failure message="&#13;&#10;Expected: a string containing &quot;THANK YOU FOR YOUR ORsDER&quot; ignoring case&#13;&#10;     but: was &quot;Thank you for your order!&quot;" type="java.lang.AssertionError">&#13;
-Expected: a string containing "THANK YOU FOR YOUR ORsDER" ignoring case&#13;
-     but: was "Thank you for your order!"</failure><system-err>&#13;
-Expected: a string containing "THANK YOU FOR YOUR ORsDER" ignoring case&#13;
-     but: was "Thank you for your order!"&#13;
-com.saucedemo.e2e.stepDefinitions.PurchaseStepDefinitions.validateMessage(PurchaseStepDefinitions.java:52)&#13;
-worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)&#13;
-worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)&#13;
-</system-err></testcase></testsuite>

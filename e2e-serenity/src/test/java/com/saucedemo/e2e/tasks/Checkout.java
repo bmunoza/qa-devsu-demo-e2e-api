@@ -2,7 +2,6 @@ package com.saucedemo.e2e.tasks;
 
 
 import static com.saucedemo.e2e.userInterfaces.CheckputPage.*;
-import static com.saucedemo.e2e.userInterfaces.InventoryPage.CART_LINK;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;

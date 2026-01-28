@@ -13,6 +13,7 @@ dependencies {
 
     testImplementation "net.serenity-bdd:serenity-cucumber:4.1.12"
     testImplementation "net.serenity-bdd:serenity-ensure:4.1.12"
+    testImplementation "net.serenity-bdd:serenity-reports:4.1.12"
 
 
     testImplementation "io.cucumber:cucumber-java:7.18.1"
@@ -30,3 +31,4 @@ test {
 
     include "**/*Runner*.class"
 }
+

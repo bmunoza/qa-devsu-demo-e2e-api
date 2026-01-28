@@ -7,6 +7,10 @@ import com.saucedemo.e2e.tasks.Checkout;
 import com.saucedemo.e2e.tasks.Login;
 import com.saucedemo.e2e.tasks.VerifyCart;
 import io.cucumber.datatable.DataTable;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import io.cucumber.java.es.Dado;
 import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Entonces;
@@ -24,16 +28,15 @@ import static org.hamcrest.Matchers.containsStringIgnoringCase;
 
 public class PurchaseStepDefinitions {
 
-
-    @Dado("Brayan inicia sesión en SauceDemo con usuario {string} y contraseña {string}")
-    public void login(String user, String pass) {
+    @Given("Brayan inicia sesion en SauceDemo con usuario {string} y contrasena {string}")
+    public void brayanIniciaSesionEnSauceDemoConUsuarioYContrasena(String user, String pass) {
         theActorCalled("Brayan").attemptsTo(
                 Open.url("https://www.saucedemo.com/"),
                 Login.withCredentials(user, pass));
     }
 
 
-    @Cuando("agrega productos al carrito")
+    @When("agrega productos al carrito")
     public void addTwoProducts(DataTable table) {
         List<String> products = table.asList();
         theActorInTheSpotlight().attemptsTo(
@@ -42,12 +45,12 @@ public class PurchaseStepDefinitions {
         );
     }
 
-    @Y("completa el formulario de compra con nombre {string} apellido {string} y zip {string}")
+    @And("completa el formulario de compra con nombre {string} apellido {string} y zip {string}")
     public void fillCheckout(String first, String last, String zip) {
         theActorInTheSpotlight().attemptsTo(Checkout.fillForm(first, last, zip));
     }
 
-    @Entonces("finaliza la compra y valida el mensaje {string}")
+    @Then("finaliza la compra y valida el mensaje {string}")
     public void validateMessage(String expected) {
         theActorInTheSpotlight().should(seeThat(ConfirmationMessage.text(), containsStringIgnoringCase(expected)));
     }

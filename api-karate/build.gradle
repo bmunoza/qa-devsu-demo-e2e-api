@@ -18,4 +18,8 @@ test {
     javaLauncher = javaToolchains.launcherFor {
         languageVersion = JavaLanguageVersion.of(11)
     }
+    doFirst {
+        file("$buildDir/karate-reports").mkdirs()
+        file("$buildDir/karate-reports/res").mkdirs()
+    }
 }

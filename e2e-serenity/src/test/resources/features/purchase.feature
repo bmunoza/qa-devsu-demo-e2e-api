@@ -5,7 +5,7 @@ Feature: Comprar productos en SauceDemo
 
   @smoke
   Scenario: Validar compra exitosa en SauceDemo
-    Given Brayan inicia sesión en SauceDemo con usuario "standard_user" y contraseña "secret_sauce"
+    Given Brayan inicia sesion en SauceDemo con usuario "standard_user" y contrasena "secret_sauce"
     When agrega productos al carrito
       | Sauce Labs Bike Light |
       | Sauce Labs Bolt T-Shirt |

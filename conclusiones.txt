@@ -1,0 +1,89 @@
+CONCLUSIONES DEL RETO E2E – Devsu
+-----------------------------------------
+
+1. DISEÑO Y ARQUITECTURA
+El uso del patrón Screenplay permitió una separación clara de responsabilidades,
+haciendo el código más legible, reutilizable y escalable.
+
+La organización por capas (Tasks, Questions, UserInterfaces, StepDefinitions)
+facilita el mantenimiento y futuras extensiones del flujo de pruebas.
+
+--------------------------------------------------
+
+2. FLEXIBILIDAD DEL ESCENARIO
+Aunque el ejercicio solicitaba agregar únicamente dos productos al carrito,
+la solución fue diseñada de forma dinámica utilizando DataTables en el feature.
+
+Esto permite que el escenario soporte cualquier cantidad de productos sin
+modificar el código, aumentando la reutilización del test.
+
+--------------------------------------------------
+
+3. VALIDACIONES
+Se implementaron validaciones intermedias antes del checkout, asegurando que:
+- Los productos mostrados en el carrito correspondan exactamente a los seleccionados.
+- Se use Ensure como mecanismo de aserción alineado con Serenity Screenplay.
+
+La validación final confirma el mensaje de compra exitosa, cumpliendo el objetivo
+principal del flujo E2E.
+
+--------------------------------------------------
+
+4. BUENAS PRÁCTICAS
+- Separación de localizadores en la capa UserInterfaces.
+- Uso de datos externos desde el feature (usuario, contraseña, productos, formulario).
+- Evita hardcodear valores críticos dentro del código.
+
+
+--------------------------------------------------
+
+5. RESULTADO FINAL
+La automatización cumple completamente con los requisitos del reto,
+ofreciendo una solución  escalable y alineada con buenas prácticas
+de automatización E2E.
+
+
+
+-----------------------------------------
+CONCLUSIONES DEL RETO API – Devsu
+-----------------------------------------
+
+1. ENFOQUE Y HERRAMIENTA
+Para la validación de servicios backend se utilizó Karate DSL, una herramienta
+especializada en automatización de pruebas API basada en sintaxis BDD.
+
+Esto permitió construir escenarios de forma clara y rápida, enfocándose en la
+validación de respuestas HTTP sin necesidad de código adicional extensivo.
+
+--------------------------------------------------
+
+2. COBERTURA DE ESCENARIOS
+Se implementaron cuatro escenarios principales que cubren el flujo de autenticación:
+
+-Login exitoso.
+-Login con contraseña incorrecta.
+-Creación exitosa de un nuevo usuario.
+-Validación del comportamiento al intentar crear un usuario ya existente.
+
+--------------------------------------------------
+
+3. VALIDACIONES
+En cada escenario se validaron elementos fundamentales del servicio, incluyendo:
+
+-Verificación del status code esperado.
+-Validación del contenido del response.
+
+--------------------------------------------------
+
+4. BUENAS PRÁCTICAS
+Para mejorar mantenibilidad y evitar repetición, se aplicaron buenas prácticas como:
+-Uso de Background para centralizar variables comunes (baseUrl, credenciales).
+-Generación dinámica de usuarios en el signup para evitar conflictos con datos existentes.
+
+
+--------------------------------------------------
+
+5. RESULTADO FINAL
+La automatización API cumple con los requerimientos del reto, validando correctamente
+los flujos principales de autenticación mediante escenarios claros, repetibles y alineados
+con buenas prácticas de pruebas automatizadas.

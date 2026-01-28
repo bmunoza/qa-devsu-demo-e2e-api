@@ -1,39 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Comprar productos en SauceDemo" tests="1" skipped="0" failures="1" errors="0" timestamp="2026-01-27T18:20:11" hostname="DESKTOP-17G6K0A" time="10.923">
+<testsuite name="Comprar productos en SauceDemo" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-01-28T03:14:42" hostname="DESKTOP-17G6K0A" time="12.339">
   <properties/>
-  <testcase name="Validar compra exitosa en SauceDemo" classname="Comprar productos en SauceDemo" time="10.923">
-    <failure message="java.lang.AssertionError: &#13;&#10;Expected: a string containing &quot;THANK YOU FOR YOUR ORsDER&quot; ignoring case&#13;&#10;     but: was &quot;Thank you for your order!&quot;" type="java.lang.AssertionError">java.lang.AssertionError: 
-Expected: a string containing &quot;THANK YOU FOR YOUR ORsDER&quot; ignoring case
-     but: was &quot;Thank you for your order!&quot;
-	at net.serenitybdd.screenplay.ErrorTally.throwSummaryExceptionFrom(ErrorTally.java:38)
-	at net.serenitybdd.screenplay.ErrorTally.reportAnyErrors(ErrorTally.java:32)
-	at net.serenitybdd.screenplay.Actor.should(Actor.java:397)
-	at com.saucedemo.e2e.stepDefinitions.PurchaseStepDefinitions.validateMessage(PurchaseStepDefinitions.java:52)
-	at ✽.finaliza la compra y valida el mensaje &quot;THANK YOU FOR YOUR ORsDER&quot;(classpath:features/purchase.feature:13)
-</failure>
-  </testcase>
+  <testcase name="Validar compra exitosa en SauceDemo" classname="Comprar productos en SauceDemo" time="12.339"/>
   <system-out><![CDATA[
 @smoke
 Scenario: Validar compra exitosa en SauceDemo                                                     ?[90m# features/purchase.feature:7?[0m
-  ?[32mGiven ?[0m?[32mBrayan inicia sesión en SauceDemo con usuario ?[0m?[32m?[1m"standard_user"?[0m?[32m y contraseña ?[0m?[32m?[1m"secret_sauce"?[0m ?[90m# com.saucedemo.e2e.stepDefinitions.PurchaseStepDefinitions.login(java.lang.String,java.lang.String)?[0m
+  ?[32mGiven ?[0m?[32mBrayan inicia sesion en SauceDemo con usuario ?[0m?[32m?[1m"standard_user"?[0m?[32m y contrasena ?[0m?[32m?[1m"secret_sauce"?[0m ?[90m# com.saucedemo.e2e.stepDefinitions.PurchaseStepDefinitions.brayanIniciaSesionEnSauceDemoConUsuarioYContrasena(java.lang.String,java.lang.String)?[0m
   ?[32mWhen ?[0m?[32magrega productos al carrito?[0m                                                                ?[90m# com.saucedemo.e2e.stepDefinitions.PurchaseStepDefinitions.addTwoProducts(io.cucumber.datatable.DataTable)?[0m
     | Sauce Labs Bike Light   |
     | Sauce Labs Bolt T-Shirt |
   ?[32mAnd ?[0m?[32mcompleta el formulario de compra con nombre ?[0m?[32m?[1m"Brayan"?[0m?[32m apellido ?[0m?[32m?[1m"Munoz"?[0m?[32m y zip ?[0m?[32m?[1m"893828"?[0m        ?[90m# com.saucedemo.e2e.stepDefinitions.PurchaseStepDefinitions.fillCheckout(java.lang.String,java.lang.String,java.lang.String)?[0m
-  ?[31mThen ?[0m?[31mfinaliza la compra y valida el mensaje ?[0m?[31m?[1m"THANK YOU FOR YOUR ORsDER"?[0m                         ?[90m# com.saucedemo.e2e.stepDefinitions.PurchaseStepDefinitions.validateMessage(java.lang.String)?[0m
-      ?[31mjava.lang.AssertionError: 
-Expected: a string containing "THANK YOU FOR YOUR ORsDER" ignoring case
-     but: was "Thank you for your order!"
-	at net.serenitybdd.screenplay.ErrorTally.throwSummaryExceptionFrom(ErrorTally.java:38)
-	at net.serenitybdd.screenplay.ErrorTally.reportAnyErrors(ErrorTally.java:32)
-	at net.serenitybdd.screenplay.Actor.should(Actor.java:397)
-	at com.saucedemo.e2e.stepDefinitions.PurchaseStepDefinitions.validateMessage(PurchaseStepDefinitions.java:52)
-	at ✽.finaliza la compra y valida el mensaje "THANK YOU FOR YOUR ORsDER"(classpath:features/purchase.feature:13)
-?[0m
+  ?[32mThen ?[0m?[32mfinaliza la compra y valida el mensaje ?[0m?[32m?[1m"THANK YOU FOR YOUR ORDER"?[0m                          ?[90m# com.saucedemo.e2e.stepDefinitions.PurchaseStepDefinitions.validateMessage(java.lang.String)?[0m
 ]]></system-out>
-  <system-err><![CDATA[ene. 27, 2026 1:20:15 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+  <system-err><![CDATA[ene. 27, 2026 10:14:49 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 ADVERTENCIA: Unable to find CDP implementation matching 143
-ene. 27, 2026 1:20:15 P. M. org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+ene. 27, 2026 10:14:49 P. M. org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
 ADVERTENCIA: Unable to find version of CDP to use for 143.0.7499.194. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.20.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
 ]]></system-err>
 </testsuite>
