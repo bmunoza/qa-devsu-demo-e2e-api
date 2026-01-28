@@ -1,8 +1,11 @@
 # ✅ PROYECTO: Reto Automatización – Devsu
 
 **Autor:** Brayan Muñoz
+
 **Lenguaje:** Java
+
 **Java Version:** 11
+
 **Gestor de dependencias:** Gradle
 
 Este repositorio contiene la solución completa del reto técnico de automatización solicitado por **Devsu**, dividido en dos módulos:
@@ -128,3 +131,4 @@ api-karate
 -Karate fue usado por su sintaxis simple y orientada a negocio.
 -El sistema retorna respuestas en texto plano, por lo que no se utilizan asserts con JSON Schema.
 -Para evitar errores de “usuario ya existe”, se genera un username dinámico
+
