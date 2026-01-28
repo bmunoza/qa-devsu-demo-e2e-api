@@ -64,17 +64,11 @@ e2e-serenity
  │   └── serenity.conf
 
 ▶️ EJECUCIÓN E2E
-1. Ubicarse en el módulo
-  cd e2e-serenity
-
+1. Ubicarse en la raíz del proyecto
+  
 2. Ejecutar pruebas
-  gradlew clean test
+  gradlew :e2e-serenity:clean :e2e-serenity:test
 
-3. Generar reporte Serenity
-  gradlew aggregate
-
-4. Reporte generado en:
-  e2e-serenity/target/site/serenity/index.html
 
 ⭐ DETALLES IMPORTANTES (E2E)
 
@@ -118,11 +112,11 @@ api-karate
  │   └── karate-config.js
 
 ▶️ EJECUCIÓN API
-1. Ubicarse en el módulo
+1. Ubicarse en la raíz del proyecto
   cd api-karate
 
 2. Ejecutar pruebas
-  gradlew clean test
+  gradlew :api-karate:test
 
 ⭐ DETALLES IMPORTANTES (API)
 -Karate fue usado por su sintaxis simple y orientada a negocio.
