@@ -1,102 +1,130 @@
-# SauceDemo E2E Automation -Devsu
+# ✅ PROYECTO: Reto Automatización – Devsu
 
-Automatización End-to-End (E2E) del flujo de compra en SauceDemo, implementada con Serenity BDD, Screenplay Pattern y Cucumber, siguiendo buenas prácticas de diseño, mantenibilidad y escalabilidad.
+**Autor:** Brayan Muñoz
+**Lenguaje:** Java
+**Java Version:** 11
+**Gestor de dependencias:** Gradle
 
----
+Este repositorio contiene la solución completa del reto técnico de automatización solicitado por **Devsu**, dividido en dos módulos:
 
-## Tecnologías utilizadas
-
-- Lenguaje: Java  
-- Framework E2E: Serenity BDD  
-- Patrón de diseño: Screenplay  
-- BDD: Cucumber  
-- Gestor de dependencias: Gradle  
-- Navegador: Google Chrome  
-- Versión de Java: JDK 11  
+- ✅ Automatización End-To-End (UI) con Serenity BDD + Screenplay
+- ✅ Automatización de pruebas API con Karate DSL
 
 ---
 
-## Alcance de la automatización
+# 🧪 1. AUTOMATIZACIÓN E2E – SauceDemo
 
-La automatización cubre el siguiente flujo funcional:
+## 📌 DESCRIPCIÓN GENERAL
 
-1. Inicio de sesión en SauceDemo  
-2. Agregar productos al carrito (dinámico)  
-3. Validación intermedia de los productos en el carrito  
-4. Proceso de checkout  
-5. Validación de compra exitosa  
+Este módulo contiene una prueba funcional automatizada **End-To-End (E2E)**
+sobre el flujo de compra de la aplicación **SauceDemo**.
 
----
+La automatización cubre:
 
-## Enfoque de diseño
+- ✅ Inicio de sesión
+- ✅ Agregar productos al carrito *(dinámico)*
+- ✅ Validación de productos seleccionados en el carrito
+- ✅ Proceso de checkout
+- ✅ Validación de mensaje de compra exitosa
 
-- Uso de Screenplay Pattern para desacoplar responsabilidades  
-- Separación por capas (Tasks, Questions, UserInterfaces)  
-- Escenarios reutilizables y escalables  
-- Validaciones intermedias y finales  
-- Datos controlados desde el feature (BDD)  
+El proyecto fue implementado utilizando el patrón **Screenplay con Serenity BDD**,
+siguiendo una arquitectura por capas para mejorar la mantenibilidad y escalabilidad.
 
 ---
 
-## Estructura del proyecto
+## 📂 ESTRUCTURA DEL MÓDULO E2E
+
+```bash
 e2e-serenity
-├── questions
-│   ├── CartProductNames
-│   └── ConfirmationMessage
-│
-├── runners
-│   └── PurchaseRunner
-│
-├── stepDefinitions
-│   ├── Hooks
-│   └── PurchaseStepDefinitions
-│
-├── tasks
-│   ├── Login
-│   ├── AddProducts
-│   ├── VerifyCart
-│   └── Checkout
-│
-├── userInterfaces
-│   ├── LoginPage
-│   ├── InventoryPage
-│   └── CheckoutPage
-│
-├── resources
-│   ├── features
-│   │   └── purchase.feature
-│   └── serenity.conf
+ ├── questions
+ │   ├── CartProductNames
+ │   └── ConfirmationMessage
+ │
+ ├── runners
+ │   └── PurchaseRunner
+ │
+ ├── stepDefinitions
+ │   ├── Hooks
+ │   └── PurchaseStepDefinitions
+ │
+ ├── tasks
+ │   ├── Login
+ │   ├── AddProducts
+ │   ├── VerifyCart
+ │   └── Checkout
+ │
+ ├── userInterfaces
+ │   ├── LoginPage
+ │   ├── InventoryPage
+ │   └── CheckoutPage
+ │
+ ├── resources
+ │   ├── features
+ │   │   └── purchase.feature
+ │   └── serenity.conf
+
+▶️ EJECUCIÓN E2E
+1. Ubicarse en el módulo
+  cd e2e-serenity
+
+2. Ejecutar pruebas
+  gradlew clean test
+
+3. Generar reporte Serenity
+  gradlew aggregate
+
+4. Reporte generado en:
+  e2e-serenity/target/site/serenity/index.html
+
+⭐ DETALLES IMPORTANTES (E2E)
+
+-La selección de productos es dinámica usando DataTables en Gherkin.
+-No existe una limitación fija de cantidad de productos.
+-Se realizan validaciones intermedias antes del checkout.
+-La validación final confirma el mensaje de compra exitosa.
+-Localizadores organizados en la capa UserInterfaces.
 
 
---------------------------------------------------
-PASOS PARA EJECUTAR EL PROYECTO
---------------------------------------------------
-1. Tener instalado:
-   - Java JDK 11
-   - Gradle
-   - Google Chrome
+🌐 2. AUTOMATIZACIÓN API – Demoblaze (Karate)
+📌 DESCRIPCIÓN GENERAL
 
-2. Clonar el repositorio:
-   git clone https://github.com/bmunoza/qa-devsu-demo-e2e-api.git
+Este módulo contiene pruebas automatizadas de API utilizando Karate DSL
+sobre los endpoints de autenticación del sitio api.demoblaze.com.
 
-3. Ubicarse en la carpeta del proyecto:
-   cd e2e-serenity
+Se desarrollaron 4 escenarios principales:
 
-4. Ejecutar las pruebas:
-   gradlew clean test
+✅ Login exitoso
+✅ Login con contraseña incorrecta
+✅ Creación de usuario nuevo exitosamente
+✅ Intento de creación de usuario ya existente
 
-5. Generar el reporte Serenity:
-   gradlew aggregate
+Las validaciones incluyen:
+-Verificación de status code
+-Validación del texto retornado en el response (plain text)
+-Uso de datos reutilizables con Background
+-Generación dinámica de usuarios para evitar conflictos
 
-6. Abrir el reporte:
-   e2e-serenity/target/site/serenity/index.html
+📂 ESTRUCTURA DEL MÓDULO API
+api-karate
+ ├── src/test/java
+ │   └── runners
+ │       └── KarateTestRunner.java
+ │
+ ├── src/test/resources
+ │   ├── features
+ │   │   ├── login.feature
+ │   │   └── signup.feature
+ │   │
+ │   └── karate-config.js
+ 
+▶️ EJECUCIÓN API
+1. Ubicarse en el módulo
+  cd api-karate
 
---------------------------------------------------
-DETALLES IMPORTANTES
---------------------------------------------------
-- La selección de productos se maneja de forma dinámica usando DataTables en el feature.
-- No existe una limitación fija de cantidad de productos.
-- Las validaciones intermedias se realizan antes del checkout.
-- La validación final confirma el mensaje de compra exitosa.
-- Los localizadores están desacoplados en la capa UserInterfaces.
+2. Ejecutar pruebas
+  gradlew clean test
 
+⭐ DETALLES IMPORTANTES (API)
+-Karate fue usado por su sintaxis simple y orientada a negocio.
+-El sistema retorna respuestas en texto plano, por lo que no se utilizan asserts con JSON Schema.
+-Para evitar errores de “usuario ya existe”, se genera un username dinámico
